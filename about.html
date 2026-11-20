@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About G25 GeoMap – free G25 genetic distance map</title>
+<meta name="description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Upload your own G25 files – everything runs in your browser. English / فارسی.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://G25geomap.github.io/about.html">
+<link rel="alternate" hreflang="en" href="https://G25geomap.github.io/about.html">
+<link rel="alternate" hreflang="fa" href="https://G25geomap.github.io/about-fa.html">
+<link rel="alternate" hreflang="x-default" href="https://G25geomap.github.io/about.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About G25 GeoMap – free G25 genetic distance map">
+<meta property="og:description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Upload your own G25 files – everything runs in your browser. English / فارسی.">
+<meta property="og:url" content="https://G25geomap.github.io/about.html">
+<meta property="og:image" content="https://G25geomap.github.io/assets/og-image.png">
+<style>
+:root{--bg:#f6f7fc;--surface:#fff;--ink:#141a33;--ink2:#4a5273;--line:#e3e6f2;--accent:#5b6cff;--accent2:#8b5cff}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1020;--surface:#141a33;--ink:#eaedfb;--ink2:#a9b1d3;--line:#252d52}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,Tahoma,sans-serif}
+main{max-width:820px;margin:0 auto;padding:28px 20px 64px}
+header.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+header.top a.brand{font-weight:800;color:var(--ink);text-decoration:none;font-size:18px}
+header.top .sp{flex:1}
+a{color:var(--accent)}
+.cta{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff!important;text-decoration:none;padding:10px 18px;border-radius:12px;font-weight:700}
+.cta.alt{background:linear-gradient(135deg,#ff6b9d,#ff8e53)}
+h1{font-size:32px;line-height:1.25;margin:18px 0 10px;letter-spacing:-.5px}
+h2{font-size:21px;margin:34px 0 8px}
+p,li{color:var(--ink2)}
+li{margin:6px 0}
+code{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.92em;direction:ltr;unicode-bidi:isolate}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:18px 0}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+img.hero{max-width:100%;border-radius:16px;border:1px solid var(--line);margin:16px 0}
+footer{margin-top:40px;color:var(--ink2);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<header class="top"><a class="brand" href="index.html">G25 GeoMap</a><span class="sp"></span><a href="about-fa.html" hreflang="fa" lang="fa">فارسی</a></header>
+<h1>G25 GeoMap – a free genetic distance map</h1>
+<p>G25 GeoMap is a free, ad-free web tool that colors a world map by the <b>genetic distance</b> between the samples you tick and every other sample in your dataset. Distances are Euclidean distances over the 25 Global25 (G25) coordinates; each other sample is colored by its distance to the <b>nearest ticked sample</b>.</p>
+<div class="row"><a class="cta" href="index.html">Open the map</a><a class="cta alt" href="index.html#donate">Support the site</a></div>
+<img class="hero" src="assets/og-image.png" width="1200" height="630" alt="G25 GeoMap" loading="lazy">
+<h2 id="features">What you can do</h2><ul><li>Upload your own G25 files and see every sample on a world map.</li><li>Tick a whole country or single samples and watch the map change color: near to far.</li><li>Filter modern and historical samples and filter by source prefix; ticked samples always stay visible.</li><li>Browse a ranked list of the closest or farthest samples.</li><li>Save the current view as a PNG image or export all distances as a CSV table.</li><li>Use the interface in English or Persian (فارسی), in a dark or light theme.</li></ul><h2 id="howto">How to use it</h2><ol><li>Open the map and load your G25 files (or try the built-in <b>synthetic</b> demo data).</li><li>Tick a country or single samples in the Samples panel, or click points on the map.</li><li>Read the colors with the legend; hover a point for its name and distance; scroll to zoom and drag to move.</li><li>Adjust filters, color scale and appearance, then save a PNG or CSV.</li></ol><p>A short guided tour opens on your first visit and can be reopened any time with the <b>Guide</b> button.</p><h2 id="data">Data format</h2><p>The map reads plain-text or CSV G25 files: one sample per line, the sample name followed by the 25 coordinates separated by commas. The latitude and longitude must be written inside the name as the last two underscore-separated numbers, for example <code>Iran_Tehran_Sample-01_35.71_51.41</code>. Names containing <code>Historical</code> count as historical samples, and the prefixes <code>G25</code> and <code>Moriopoulos</code> can be used to filter by source. Lines starting with <code>#</code> are ignored.</p><p>G25 GeoMap does not include or distribute any genetic dataset – you bring your own files.</p><h2 id="privacy">Privacy</h2><p>Your files never leave your browser: they are read and computed locally with JavaScript. There is no account and there are no ads or tracking scripts. The site only remembers your preferences (language, theme, panel width, whether you saw the tour) in your browser’s local storage.</p><p>Optional map backgrounds are loaded from third-party tile servers (Esri or OpenStreetMap), which can see the map area you view and your IP address; the default “No tiles” background loads nothing. If you click the optional WalletConnect donation button, a wallet library is loaded from the jsDelivr CDN and connects to the WalletConnect network only at that moment.</p><h2 id="support">Support the site</h2><p>G25 GeoMap is free. If it helped you, a small crypto donation keeps it online – you can open your wallet with one click or copy an address (USDT, USDC, ETH, BNB, BTC, TON, SOL). Any amount is appreciated.</p><h2 id="notes">Good to know</h2><p>This tool is for education and curiosity. Distances between samples are a statistical summary of genetic similarity and are not medical, legal or ancestry advice. Demo data are random numbers and mean nothing.</p><p>G25 GeoMap is an independent viewer. The Global25 (G25) coordinate files are made by their own authors; this site is not affiliated with or endorsed by them. Optional base-map tiles (OpenStreetMap contributors, Esri) are loaded from their providers only if you choose them.</p>
+<footer>&copy; G25 GeoMap &middot; <a href="index.html">Open the map</a></footer>
+</main>
+</body>
+</html>
