@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>انتقادات و پیشنهادات – G25 GeoMap</title>
+<meta name="description" content="انتقاد، ایده، اشتباهی که دیدید یا قابلیتی که کم است — همه‌ی این‌ها ابزار را بهتر می‌کند. نظرتان را در پایین بنویسید. نظرها عمومی‌اند و برای نوشتن آن‌ها به یک حساب رایگان GitHub نیاز دارید.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://g25geomap.github.io/feedback-fa.html">
+<link rel="alternate" hreflang="en" href="https://g25geomap.github.io/feedback.html">
+<link rel="alternate" hreflang="fa" href="https://g25geomap.github.io/feedback-fa.html">
+<link rel="alternate" hreflang="x-default" href="https://g25geomap.github.io/feedback.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<style>
+:root{--bg:#f6f7fc;--surface:#fff;--ink:#141a33;--ink2:#4a5273;--line:#e3e6f2;--accent:#5b6cff;--accent2:#8b5cff}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1020;--surface:#141a33;--ink:#eaedfb;--ink2:#a9b1d3;--line:#252d52}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,Tahoma,sans-serif}
+main{max-width:820px;margin:0 auto;padding:28px 20px 64px}
+header.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+header.top a.brand{font-weight:800;color:var(--ink);text-decoration:none;font-size:18px}
+header.top .sp{flex:1}
+a{color:var(--accent)}
+.cta{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff!important;text-decoration:none;padding:10px 18px;border-radius:12px;font-weight:700}
+.cta.alt{background:linear-gradient(135deg,#ff6b9d,#ff8e53)}
+h1{font-size:32px;line-height:1.25;margin:18px 0 10px;letter-spacing:-.5px}
+h2{font-size:21px;margin:34px 0 8px}
+p,li{color:var(--ink2)}
+li{margin:6px 0}
+code{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.92em;direction:ltr;unicode-bidi:isolate}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:18px 0}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+img.hero{max-width:100%;border-radius:16px;border:1px solid var(--line);margin:16px 0}
+footer{margin-top:40px;color:var(--ink2);font-size:14px}
+
+.fbcard{margin:22px 0}
+button.cta{border:0;cursor:pointer;font:inherit;font-weight:700}
+.note{font-size:14px;color:var(--ink2);margin:10px 0 0}
+#comments{margin-top:18px;min-height:40px}
+.giscus,.giscus-frame{width:100%}
+[hidden]{display:none!important}
+</style>
+<script src="assets/feedback-config.js"></script>
+</head>
+<body>
+<main>
+<header class="top"><a class="brand" href="index.html?lang=fa">G25 GeoMap</a><span class="sp"></span><a href="about-fa.html">درباره</a><a href="feedback.html" hreflang="en" lang="en">English</a></header>
+<h1>انتقادات و پیشنهادات</h1>
+<p>انتقاد، ایده، اشتباهی که دیدید یا قابلیتی که کم است — همه‌ی این‌ها ابزار را بهتر می‌کند. نظرتان را در پایین بنویسید. نظرها عمومی‌اند و برای نوشتن آن‌ها به یک حساب رایگان GitHub نیاز دارید.</p>
+<div class="card fbcard">
+<div id="ask" class="row"><button class="cta" id="showC" type="button" hidden>نمایش بخش نظرات</button><a class="cta alt" id="issueA" href="https://github.com/G25geomap/G25geomap.github.io/issues/new?title=%D9%86%D8%B8%D8%B1%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20G25%20GeoMap" target="_blank" rel="noopener">یا در GitHub یک issue باز کنید</a></div>
+<p class="note" id="noteC" hidden>با کلیک روی دکمه، بخش نظرات از giscus.app (که روی GitHub Discussions کار می‌کند) بارگذاری می‌شود و آن‌ها آدرس IP شما را خواهند دید. پیش از کلیک چیزی بارگذاری نمی‌شود.</p>
+<p class="note" id="soonC" hidden>بخش نظرات در حال راه‌اندازی است. تا آماده شدن، لطفاً از پیوند GitHub زیر استفاده کنید.</p>
+<div id="comments"></div>
+</div>
+<div class="row"><a class="cta" href="index.html?lang=fa">بازگشت به نقشه</a></div>
+<footer>&copy; G25 GeoMap</footer>
+</main>
+<script>
+(function(){
+  var C=window.G25_FEEDBACK||{}, ok=!!(C.repo&&C.repoId&&C.category&&C.categoryId);
+  var show=document.getElementById('showC'), note=document.getElementById('noteC'), soon=document.getElementById('soonC');
+  if(ok){ show.hidden=false; note.hidden=false; } else { soon.hidden=false; }
+  show.addEventListener('click',function(){
+    show.hidden=true; note.hidden=true;
+    var dark=!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches), s=document.createElement('script');
+    s.src='https://giscus.app/client.js'; s.async=true; s.crossOrigin='anonymous';
+    var a={'data-repo':C.repo,'data-repo-id':C.repoId,'data-category':C.category,'data-category-id':C.categoryId,'data-mapping':'specific','data-term':'Feedback and suggestions',
+      'data-strict':'0','data-reactions-enabled':'1','data-emit-metadata':'0','data-input-position':'top','data-theme':dark?'dark':'light','data-lang':'fa','data-loading':'lazy'};
+    for(var k in a) s.setAttribute(k,a[k]);
+    document.getElementById('comments').appendChild(s);
+  });
+})();
+</script>
+</body>
+</html>

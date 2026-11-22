@@ -33,6 +33,8 @@ for root, _, files in os.walk(here):
             t = s
             for old in olds:
                 t = t.replace(old, url)
+            for oh in set(o.split("://", 1)[-1] for o in olds):
+                t = t.replace("var SITE_HOST='%s'" % oh, "var SITE_HOST='%s'" % host)
             if t != s:
                 io.open(p, "w", encoding="utf-8", newline="\n").write(t)
                 n += 1
