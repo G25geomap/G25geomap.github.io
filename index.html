@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>G25 GeoMap – Free G25 genetic distance map in your browser</title>
-<meta name="description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. English / فارسی.">
+<meta name="description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://g25geomap.github.io/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -13,18 +13,19 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="G25 GeoMap">
 <meta property="og:title" content="G25 GeoMap – Free G25 genetic distance map in your browser">
-<meta property="og:description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. English / فارسی.">
+<meta property="og:description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.">
 <meta property="og:url" content="https://g25geomap.github.io/">
 <meta property="og:image" content="https://g25geomap.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="G25 GeoMap – Free G25 genetic distance map in your browser">
-<meta name="twitter:description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. English / فارسی.">
+<meta name="twitter:description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.">
 <meta name="twitter:image" content="https://g25geomap.github.io/assets/og-image.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "G25 GeoMap", "url": "https://g25geomap.github.io/", "description": "Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. English / فارسی.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "inLanguage": ["en", "fa"], "isAccessibleForFree": true, "image": "https://g25geomap.github.io/assets/og-image.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "G25 GeoMap", "url": "https://g25geomap.github.io/", "description": "Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "inLanguage": ["en", "fa", "zh-Hans"], "isAccessibleForFree": true, "image": "https://g25geomap.github.io/assets/og-image.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 <style>
 :root{
   --font:Inter,"SF Pro Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -403,6 +404,15 @@ html.site.tbc #toolbar .vsep{margin:6px 0}
 .sitelinks a:hover,.sitelinks a:focus-visible{color:var(--accent);text-decoration:underline}
 .dnbusy #dnQuick{pointer-events:none;opacity:.5}
 .dninp[readonly]{opacity:.75}
+/* more languages: scripts that must not be letter-spaced, per-script font stacks, no capital-letter transform for Georgian, a busy cue while a language file is on its way */
+html:lang(zh) *,html:lang(ja) *,html:lang(ko) *,html:lang(hi) *,html:lang(bn) *,html:lang(th) *,html:lang(hy) *,html:lang(ka) *{letter-spacing:normal!important}
+html:lang(ka) .th2{text-transform:none}
+html:lang(zh-Hans){--font:Inter,"SF Pro Text","Segoe UI",system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",Roboto,"Helvetica Neue",Arial,sans-serif}
+html:lang(zh-Hant){--font:Inter,"SF Pro Text","Segoe UI",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei","Noto Sans CJK TC","Noto Sans TC",Roboto,"Helvetica Neue",Arial,sans-serif}
+html:lang(ja){--font:Inter,"SF Pro Text","Segoe UI",system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans CJK JP","Noto Sans JP",Roboto,"Helvetica Neue",Arial,sans-serif}
+html:lang(ko){--font:Inter,"SF Pro Text","Segoe UI",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans CJK KR","Noto Sans KR",Roboto,"Helvetica Neue",Arial,sans-serif}
+html:lang(ar),html:lang(ur){--font:"Noto Sans Arabic","Noto Naskh Arabic",Tahoma,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+html.langbusy #langSel{cursor:progress;opacity:.65}
 </style>
 </head>
 <body>
@@ -904,7 +914,9 @@ var LANGS={
    "btnFeedback": "Feedback",
    "btnFeedbackTip": "Send feedback, criticism or a suggestion",
    "lnkFeedback": "Feedback & suggestions",
-   "stickerHide": "Hide the mascot"
+   "stickerHide": "Hide the mascot",
+   "pageTitle": "G25 GeoMap – Free G25 genetic distance map in your browser",
+   "langLoadFail": "Could not load the language “{name}”. Check your connection and try again."
   }
  },
  "fa": {
@@ -1126,31 +1138,61 @@ var LANGS={
    "btnFeedback": "نظرات",
    "btnFeedbackTip": "ارسال نظر، انتقاد یا پیشنهاد",
    "lnkFeedback": "انتقادات و پیشنهادات",
-   "stickerHide": "پنهان کردن شخصیت"
+   "stickerHide": "پنهان کردن شخصیت",
+   "pageTitle": "G25 GeoMap – نقشه‌ی رایگان فاصله‌ی ژنتیکی G25 در مرورگر شما",
+   "langLoadFail": "زبان «{name}» بارگذاری نشد. اتصال اینترنت را بررسی کنید و دوباره تلاش کنید."
   }
  }
 };
 /*LANGS-END*/
 var SITE=true;            // true in the public website build: donate window, guided tour, demo data, direct tile servers
 var TILEURL={"esri_light": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", "esri_light_ref": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", "esri_dark": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", "esri_dark_ref": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", "esri_imagery": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", "esri_places": "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", "esri_streets": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", "esri_topo": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}", "osm": "https://tile.openstreetmap.org/{z}/{x}/{y}.png"};       // website build: provider id -> tile URL template (the local app uses its own /tiles/ proxy)
+var LANGS_X={"zh-hans":{"name":"简体中文","dir":"ltr","tag":"zh-Hans","nl":"zh-Hans-u-nu-latn","pl":["other"],"v":"5824b1f08e"}};         // website build: the languages beyond the built-in ones, code -> {name,dir,tag,nl,pl,v}; their texts are fetched from lang/<code>.json when a visitor needs them
 function hasL(k){ return Object.prototype.hasOwnProperty.call(LANGS,k); }   // 'constructor' / '__proto__' in the stored language must not count as a language
+function hasX(k){ return Object.prototype.hasOwnProperty.call(LANGS_X,k); }
+function hasAny(k){ return hasL(k)||hasX(k); }
+function pickLang(tag){                // a language tag as browsers write it ('zh-CN', 'pt-PT', 'no', 'fa-IR', 'en_US') -> the code of an available language, or ''
+  var t=String(tag||'').toLowerCase().replace(/_/g,'-'); if(!/^[a-z]{2,3}(-[a-z0-9]{2,8})*$/.test(t)) return '';
+  var p=t.split('-'), b=p[0], c;
+  if(b==='zh'){   // Traditional Chinese is never answered with Simplified: without a Traditional pack the visitor's next language is tried
+    c=(p.indexOf('hant')>=0||p.indexOf('tw')>=0||p.indexOf('hk')>=0||p.indexOf('mo')>=0)?'zh-hant':'zh-hans'; return hasAny(c)?c:'';
+  }
+  if(b==='sr'&&p.indexOf('me')>=0&&hasAny('cnr')) return 'cnr';
+  if(hasAny(t)) return t;
+  if(b==='no'||b==='nn') b='nb'; else if(b==='in') b='id';
+  return hasAny(b)?b:'';
+}
 var skipTiles=false;                   // set while a PNG is drawn again without tiles
 if(SITE) document.documentElement.classList.add('site');
-var LANG='en';
-try{ var sl0=localStorage.getItem('g25geo-lang'); if(sl0&&hasL(sl0)) LANG=sl0; }catch(e){}
-if(SITE){   // the website follows ?lang=fa, otherwise the browser language, until the visitor picks one
+var LANG='en', LANG_WANT='';           // LANG_WANT: a language of LANGS_X chosen at start-up; its texts are fetched right after the first paint (English meanwhile)
+if(SITE){   // the website: ?lang=xx, else the language the visitor picked earlier, else the browser's languages in their order of preference
   try{
-    var ql=(location.search.match(/[?&]lang=([a-z]{2})/i)||[])[1], bl=((navigator.languages&&navigator.languages[0])||navigator.language||'').slice(0,2).toLowerCase(), st1=null;
-    try{ st1=localStorage.getItem('g25geo-lang'); }catch(e2){}
-    if(ql&&hasL(ql.toLowerCase())) LANG=ql.toLowerCase(); else if(!st1&&hasL(bl)) LANG=bl;
+    var st1=null, want=''; try{ st1=localStorage.getItem('g25geo-lang'); }catch(e2){}
+    var stOk=!!(st1&&hasAny(st1)), ql=(location.search.match(/[?&]lang=([A-Za-z0-9_-]{2,15})/)||[])[1];
+    if(ql) want=pickLang(ql);
+    if(!want&&stOk) want=st1;
+    if(!want&&!stOk){ var bls=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language]; for(var bi=0;bi<bls.length&&!want;bi++) want=pickLang(bls[bi]); }
+    if(want){ if(hasL(want)) LANG=want; else LANG_WANT=want; }
   }catch(e){}
+} else {
+  try{ var sl0=localStorage.getItem('g25geo-lang'); if(sl0&&hasL(sl0)) LANG=sl0; }catch(e){}
 }
-function nf(n){ return Number(n).toLocaleString('en-US'); }
+function nf(n){ var L=LANGS[LANG]; return Number(n).toLocaleString((L&&L.nl)||'en-US'); }   // digits stay 0-9; the grouping follows the language (website languages carry nl)
 function fillT(s,p){ return p?s.replace(/\{(\w+)\}/g,function(m,k){ return (k in p)?p[k]:m; }):s; }
 function _(key,p){ var s=LANGS[LANG].s[key]; if(s===undefined) s=LANGS.en.s[key]; return s===undefined?key:fillT(s,p); }
-function pickT(L,key,n){ var k=key+(n===1?'_one':'_other'); return (k in L)?L[k]:((key in L)?L[key]:undefined); }
+function pluralCat(n){          // CLDR plural category of the interface language (zero/one/two/few/many/other); en and fa keep one / other
+  var L=LANGS[LANG];
+  if(L&&L.pl&&window.Intl&&Intl.PluralRules){ try{ var pr=L._pr||(L._pr=new Intl.PluralRules(L.tag||LANG)); return pr.select(Number(n)); }catch(e){} }
+  return n===1?'one':'other';
+}
+function pickT(L,key,n,cat){    // cat: plural category to look for (default: the English rule); falls back to key_other, then to key
+  var k=key+'_'+(cat||(n===1?'one':'other'));
+  if(k in L) return L[k];
+  k=key+'_other'; if(k in L) return L[k];
+  return (key in L)?L[key]:undefined;
+}
 function _n(key,n,p){
-  var s=pickT(LANGS[LANG].s,key,n); if(s===undefined) s=pickT(LANGS.en.s,key,n); if(s===undefined) return key;
+  var s=pickT(LANGS[LANG].s,key,n,pluralCat(n)); if(s===undefined) s=pickT(LANGS.en.s,key,n); if(s===undefined) return key;
   var q={n:nf(n)}; if(p) for(var k in p) q[k]=p[k]; return fillT(s,q);
 }
 function iso(s){ return isRtl()?String.fromCharCode(0x2068)+s+String.fromCharCode(0x2069):s; }      // a Latin name inside a right-to-left sentence stays in order (plain-text strings)
@@ -1167,9 +1209,9 @@ function fillBaseOptions(){
 }
 function refLabelsTitle(){ $('swRef').title=BASEMAPS[S.base].ref?'':_('refLabelsTip'); }
 function applyLang(code,fromUser){
-  if(!LANGS[code]) code='en';
+  if(!hasL(code)) code='en';
   LANG=code; var root=document.documentElement;
-  root.setAttribute('lang',code); root.setAttribute('dir',LANGS[code].dir||'ltr');
+  root.setAttribute('lang',LANGS[code].tag||code); root.setAttribute('dir',LANGS[code].dir||'ltr');
   if(fromUser){ try{ localStorage.setItem('g25geo-lang',code); }catch(e){} }
   var each=function(sel,fn){ var l=document.querySelectorAll(sel); for(var i=0;i<l.length;i++) fn(l[i]); };
   each('[data-i18n]',function(e){ e.textContent=_(e.getAttribute('data-i18n')); });
@@ -1185,8 +1227,10 @@ function applyLang(code,fromUser){
   if(SITE) siteLang();
   dirty=true;
 }
-(function(){ var sel=$('langSel'); Object.keys(LANGS).forEach(function(k){ var o=document.createElement('option'); o.value=k; o.textContent=LANGS[k].name; sel.appendChild(o); }); sel.value=LANG; })();
-$('langSel').addEventListener('change',function(){ applyLang($('langSel').value,true); });
+(function(){ var sel=$('langSel');
+  Object.keys(LANGS).concat(Object.keys(LANGS_X)).forEach(function(k){ var o=document.createElement('option'); o.value=k; o.textContent=(hasL(k)?LANGS[k]:LANGS_X[k]).name; sel.appendChild(o); });
+  sel.value=LANG; })();
+$('langSel').addEventListener('change',function(){ var c=$('langSel').value; if(SITE) siteSetLang(c,true); else applyLang(c,true); });   // website: a language whose file is not loaded yet is fetched first
 
 // =============== theme
 var theme='dark';   // dark is the default; a choice is remembered only after the user switches the theme (key g25geo-theme2)
@@ -2384,8 +2428,14 @@ var tourOn=false, tourI=0, dnLastFocus=null, dnBusy=false;
 // ---- amounts: exact decimal text -> integer base units (BigInt), never through floating point
 function dnClean(raw){                // digits of any script -> ASCII, spaces removed, the Persian/Arabic decimal separator -> "."
   var s=String(raw==null?'':raw).trim();
-  s=s.replace(/[۰-۹]/g,function(c){ return String(c.charCodeAt(0)-1776); }).replace(/[٠-٩]/g,function(c){ return String(c.charCodeAt(0)-1632); });
-  return s.replace(/\s+/g,'').replace(/٫/g,'.');
+  // Persian ۰-۹, Arabic-Indic ٠-٩, Devanagari ०-९, Bengali ০-৯, Thai ๐-๙ and full-width ０-９: every block is ten digits wide
+  s=s.replace(/[٠-٩۰-۹०-९০-৯๐-๙０-９]/g,function(c){
+    var u=c.charCodeAt(0), b=[0x660,0x6F0,0x966,0x9E6,0xE50,0xFF10];
+    for(var i=0;i<b.length;i++){ if(u>=b[i]&&u<=b[i]+9) return String(u-b[i]); }
+    return c;
+  });
+  // decimal separators (Arabic ٫, full-width ．) -> "." ; thousands / comma signs (Arabic ٬, full-width ，) -> "," which dnAmbig then treats as ambiguous
+  return s.replace(/\s+/g,'').replace(/[٫．]/g,'.').replace(/[٬，]/g,',');
 }
 function dnAmbig(s){                  // a comma may be a decimal comma ("1,5") or a thousands separator ("1,000"): with money we never guess
   var n=(s.match(/[,،]/g)||[]).length;
@@ -2657,14 +2707,15 @@ async function dnWcClick(){
 
 // ---- the built-in dataset: one file that lives on this site, read once when the page opens (nothing is uploaded, nothing is sent anywhere)
 var DATA_URL='data/AllG25_final_prefixed_v7.txt', DATA_NAME='AllG25_final_prefixed_v7.txt', dataState='idle', dataP=null;
-function dataUI(kind,msg){
-  var el=$('dataLoad'); el.className=kind?'show '+kind:'';
+var dataKey='';                       // the text key of the card that is showing: a language switch while the card is open re-writes it
+function dataUI(kind,key){
+  var el=$('dataLoad'); el.className=kind?'show '+kind:''; dataKey=kind?(key||''):'';
   if(!kind) return;
-  $('dlMsg').textContent=msg||''; $('dlRetry').style.display=(kind==='err')?'inline-flex':'none';
+  $('dlMsg').textContent=dataKey?_(dataKey):''; $('dlRetry').style.display=(kind==='err')?'inline-flex':'none';
 }
 function siteLoadData(){
   if(dataState==='loading'||dataState==='ready') return dataP;
-  dataState='loading'; dataUI('load',_('dlLoading'));
+  dataState='loading'; dataUI('load','dlLoading');
   dataP=fetch(DATA_URL,{credentials:'omit'})
     .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
     .then(function(text){ return new Promise(function(done){ setTimeout(function(){ done(text); },30); }); })   // let the loading card be drawn before the (short) parse
@@ -2674,7 +2725,7 @@ function siteLoadData(){
       FILES.length=0; FILES.push({name:DATA_NAME,size:text.length,rows:r.rows,skipped:r.skipped,noCoord:r.noCoord});
       applyFiles(true); dataState='ready'; dataUI('');
     })
-    .catch(function(err){ dataState='error'; dataUI('err',_('dlFail')); });
+    .catch(function(err){ dataState='error'; dataUI('err','dlFail'); });
   return dataP;
 }
 function pickDemoCountry(){          // the tour colors the map with one country so that the next steps have something to show
@@ -2830,20 +2881,60 @@ function toolbarPlace(){
   void tb.offsetWidth; root.classList.remove('tbm');
 }
 
+// ---- languages beyond the built-in ones: their texts live in lang/<code>.json and are fetched only when a visitor needs them
+var langSeq=0;
+function siteLoadLang(code){          // -> Promise: resolves once LANGS[code] exists, rejects when the file cannot be loaded
+  if(hasL(code)) return Promise.resolve();
+  var X=hasX(code)?LANGS_X[code]:null; if(!X) return Promise.reject(new Error('unknown language'));
+  if(X.p) return X.p;                 // the same file is never requested twice at once
+  X.p=fetch('lang/'+code+'.json'+(X.v?'?v='+encodeURIComponent(X.v):''),{credentials:'omit'})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(j){
+      if(!j||!j.s||typeof j.s!=='object') throw new Error('bad language file');
+      LANGS[code]={name:X.name,dir:X.dir,tag:X.tag,nl:X.nl,pl:X.pl,s:j.s};
+    })
+    .catch(function(err){ X.p=null; throw err; });   // a failed load can be tried again
+  return X.p;
+}
+function siteSetLang(code,fromUser){  // the visitor's choice (or the start-up choice): built-in languages switch at once, the others after their file arrived
+  var my=++langSeq, root=document.documentElement;
+  if(hasL(code)){ root.classList.remove('langbusy'); applyLang(code,fromUser); return Promise.resolve(true); }
+  if(!hasX(code)){ $('langSel').value=LANG; return Promise.resolve(false); }
+  root.classList.add('langbusy');
+  return siteLoadLang(code).then(function(){
+    if(my!==langSeq) return false;    // a newer choice replaced this one while the file was on its way
+    root.classList.remove('langbusy'); applyLang(code,fromUser); return true;
+  },function(){
+    if(my!==langSeq) return false;
+    root.classList.remove('langbusy'); $('langSel').value=LANG;    // the page stays in the language it has
+    if(fromUser) toast(_('langLoadFail',{name:LANGS_X[code].name}),true);
+    return false;
+  });
+}
+
 // ---- wiring
 function siteLang(){
-  var ab=(LANG==='fa')?'about-fa.html':'about.html';   // the About links follow the interface language
+  var sfx=(LANG==='en')?'':'-'+LANG;    // about.html, about-fa.html, about-zh-hans.html ... (one About and one Feedback page per language)
+  var ab='about'+sfx+'.html', fb='feedback'+sfx+'.html';
   $('lnkAbout').setAttribute('href',ab); $('lnkPrivacy').setAttribute('href',ab+'#privacy');
-  var fb=(LANG==='fa')?'feedback-fa.html':'feedback.html'; $('lnkFeedback').setAttribute('href',fb); $('btnFeedback').setAttribute('href',fb);
+  $('lnkFeedback').setAttribute('href',fb); $('btnFeedback').setAttribute('href',fb);
+  document.title=_('pageTitle');
+  if(dataKey) $('dlMsg').textContent=_(dataKey);
   dnRender(); toolbarPlace(); stickerPlace(); if(tourOn) tourShow(tourI);
 }
 function siteStart(){
   document.documentElement.classList.add('site');
   var first=true; try{ first=!localStorage.getItem('g25geo-tour'); }catch(e){}
   siteLoadData();
-  if(/^#donate/i.test(location.hash)) openDonate();
-  else if(first) startTour();
-  toolbarPlace(); stickerPlace(); setTimeout(function(){ toolbarPlace(); stickerPlace(); },120); setTimeout(function(){ toolbarPlace(); stickerPlace(); },600);
+  var go=function(){
+    if(/^#donate/i.test(location.hash)) openDonate();
+    else if(first) startTour();
+    toolbarPlace(); stickerPlace(); setTimeout(function(){ toolbarPlace(); stickerPlace(); },120); setTimeout(function(){ toolbarPlace(); stickerPlace(); },600);
+  };
+  if(LANG_WANT){   // the start-up language still has to be fetched: the first-visit tour waits for it (at most 2.5 s) so that it opens in the visitor's language
+    var fired=false, once=function(){ if(!fired){ fired=true; go(); } };
+    siteSetLang(LANG_WANT,false).then(once,once); setTimeout(once,2500);
+  } else go();
 }
 function siteInit(){
   $('btnDonate').addEventListener('click',openDonate);
@@ -2889,7 +2980,7 @@ function siteInit(){
     } else if(e.key==='Escape'&&$('donate').classList.contains('show')){ closeDonate(); }
   },true);
   dnRender();
-  window.__site={DON:DON,TOUR:TOUR,dnUri:dnUri,dnUnits:dnUnits,dnFmt:dnFmt,dnErc20:dnErc20,dnNorm:dnNorm,dnAmbig:dnAmbig,dnClean:dnClean,loadData:siteLoadData,ready:function(){ return dataState==='ready'; },get dataState(){ return dataState; },wmPattern:wmPattern,stickerPlace:stickerPlace,toolbarPlace:toolbarPlace,startTour:startTour,tourShow:tourShow,openDonate:openDonate,get tourOn(){return tourOn;},get tourI(){return tourI;}};
+  window.__site={DON:DON,TOUR:TOUR,pickLang:pickLang,setLang:siteSetLang,loadLang:siteLoadLang,get langWant(){ return LANG_WANT; },get langsX(){ return LANGS_X; },dnUri:dnUri,dnUnits:dnUnits,dnFmt:dnFmt,dnErc20:dnErc20,dnNorm:dnNorm,dnAmbig:dnAmbig,dnClean:dnClean,loadData:siteLoadData,ready:function(){ return dataState==='ready'; },get dataState(){ return dataState; },wmPattern:wmPattern,stickerPlace:stickerPlace,toolbarPlace:toolbarPlace,startTour:startTour,tourShow:tourShow,openDonate:openDonate,get tourOn(){return tourOn;},get tourI(){return tourI;}};
 }
 
 // =============== start
@@ -2907,7 +2998,7 @@ window.__g25={get refView(){return refView;},get refDown(){return refDown;},get 
 <noscript><div style="max-width:720px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,sans-serif;color:#222;background:#fff">
 <h1>G25 GeoMap</h1>
 <p>G25 GeoMap is a free tool that colors a world map by Global25 (G25) genetic distance from the samples you choose. It needs JavaScript; everything runs in your browser.</p>
-<p><a href="about.html">About &amp; how it works</a> &middot; <a href="about-fa.html" lang="fa" hreflang="fa">درباره‌ی ابزار (فارسی)</a></p>
+<p><a href="about.html" lang="en" hreflang="en">About &amp; how it works</a> &middot; <a href="about-fa.html" lang="fa" hreflang="fa">فارسی</a> &middot; <a href="about-zh-hans.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></p>
 </div></noscript>
 </body>
 </html>

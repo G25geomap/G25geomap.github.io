@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://g25geomap.github.io/feedback.html">
 <link rel="alternate" hreflang="en" href="https://g25geomap.github.io/feedback.html">
 <link rel="alternate" hreflang="fa" href="https://g25geomap.github.io/feedback-fa.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://g25geomap.github.io/feedback-zh-hans.html">
 <link rel="alternate" hreflang="x-default" href="https://g25geomap.github.io/feedback.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
@@ -32,6 +33,22 @@ code{background:var(--surface);border:1px solid var(--line);border-radius:6px;pa
 .row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
 img.hero{max-width:100%;border-radius:16px;border:1px solid var(--line);margin:16px 0}
 footer{margin-top:40px;color:var(--ink2);font-size:14px}
+details.lm{position:relative}
+details.lm>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:14px;line-height:1.5;user-select:none}
+details.lm>summary::-webkit-details-marker{display:none}
+details.lm>summary:hover,details.lm[open]>summary,details.lm>summary:focus-visible{border-color:var(--accent)}
+details.lm svg{flex:none;opacity:.8}
+details.lm ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);z-index:5;margin:0;padding:6px;list-style:none;min-width:190px;max-height:min(60vh,420px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 34px rgba(10,20,50,.2)}
+details.lm li{margin:0}
+details.lm li a{display:block;padding:6px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:14px;line-height:1.5;white-space:nowrap}
+details.lm li a:hover,details.lm li a:focus-visible{background:var(--bg);color:var(--accent)}
+details.lm li a[aria-current]{font-weight:700;color:var(--accent)}
+html:lang(zh-Hans) body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",sans-serif}
+html:lang(zh-Hant) body{font-family:system-ui,-apple-system,"PingFang TC","Microsoft JhengHei","Noto Sans CJK TC","Noto Sans TC",sans-serif}
+html:lang(ja) body{font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans CJK JP","Noto Sans JP",sans-serif}
+html:lang(ko) body{font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans CJK KR","Noto Sans KR",sans-serif}
+html:lang(ar) body,html:lang(ur) body{font-family:"Noto Sans Arabic","Noto Naskh Arabic",Tahoma,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+html:lang(zh) h1,html:lang(ja) h1,html:lang(ko) h1,html:lang(hi) h1,html:lang(bn) h1,html:lang(th) h1,html:lang(hy) h1,html:lang(ka) h1,html[dir=rtl] h1{letter-spacing:normal}
 
 .fbcard{margin:22px 0}
 button.cta{border:0;cursor:pointer;font:inherit;font-weight:700}
@@ -44,16 +61,16 @@ button.cta{border:0;cursor:pointer;font:inherit;font-weight:700}
 </head>
 <body>
 <main>
-<header class="top"><a class="brand" href="index.html">G25 GeoMap</a><span class="sp"></span><a href="about.html">About</a><a href="feedback-fa.html" hreflang="fa" lang="fa">فارسی</a></header>
-<h1>Feedback & suggestions</h1>
+<header class="top"><a class="brand" href="index.html?lang=en">G25 GeoMap</a><span class="sp"></span><a href="about.html">About</a><details class="lm"><summary aria-label="Language"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>English</span></summary><ul><li><a href="feedback.html" lang="en" hreflang="en" aria-current="true">English</a></li><li><a href="feedback-fa.html" lang="fa" hreflang="fa">فارسی</a></li><li><a href="feedback-zh-hans.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li></ul></details></header>
+<h1>Feedback &amp; suggestions</h1>
 <p>Criticism, ideas, a mistake you found, a feature you miss – all of it makes the tool better. Leave a comment below. Comments are public, and you need a free GitHub account to write one.</p>
 <div class="card fbcard">
 <div id="ask" class="row"><button class="cta" id="showC" type="button" hidden>Show the comment box</button><a class="cta alt" id="issueA" href="https://github.com/G25geomap/G25geomap.github.io/issues/new?title=Feedback%20on%20G25%20GeoMap" target="_blank" rel="noopener">Or open an issue on GitHub</a></div>
 <p class="note" id="noteC" hidden>Clicking the button loads the comment box from giscus.app (it runs on GitHub Discussions), which can then see your IP address. Nothing is loaded before you click.</p>
-<p class="note" id="soonC" hidden>The comment box is being set up. Until it is ready, please use the GitHub link below.</p>
+<p class="note" id="soonC" hidden>The comment box is being set up. Until it is ready, please use the GitHub link instead.</p>
 <div id="comments"></div>
 </div>
-<div class="row"><a class="cta" href="index.html">Back to the map</a></div>
+<div class="row"><a class="cta" href="index.html?lang=en">Back to the map</a></div>
 <footer>&copy; G25 GeoMap</footer>
 </main>
 <script>
@@ -71,6 +88,11 @@ button.cta{border:0;cursor:pointer;font:inherit;font-weight:700}
     document.getElementById('comments').appendChild(s);
   });
 })();
+</script>
+<script>
+(function(){var d=document.querySelector('details.lm');if(!d)return;
+document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});})();
 </script>
 </body>
 </html>
