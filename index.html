@@ -21,11 +21,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fa_IR">
 <meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="G25 GeoMap – Free G25 genetic distance map in your browser">
 <meta name="twitter:description" content="Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.">
 <meta name="twitter:image" content="https://g25geomap.github.io/assets/og-image.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "G25 GeoMap", "url": "https://g25geomap.github.io/", "description": "Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "inLanguage": ["en", "fa", "zh-Hans"], "isAccessibleForFree": true, "image": "https://g25geomap.github.io/assets/og-image.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "G25 GeoMap", "url": "https://g25geomap.github.io/", "description": "Free online map that colors the world by Global25 (G25) genetic distance from the samples you pick. Thousands of samples built in, nothing to upload, all in your browser. Several languages.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "inLanguage": ["en", "fa", "zh-Hans", "de"], "isAccessibleForFree": true, "image": "https://g25geomap.github.io/assets/og-image.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 <style>
 :root{
   --font:Inter,"SF Pro Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -1152,7 +1153,7 @@ var LANGS={
 /*LANGS-END*/
 var SITE=true;            // true in the public website build: donate window, guided tour, demo data, direct tile servers
 var TILEURL={"esri_light": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", "esri_light_ref": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", "esri_dark": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", "esri_dark_ref": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", "esri_imagery": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", "esri_places": "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", "esri_streets": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", "esri_topo": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}", "osm": "https://tile.openstreetmap.org/{z}/{x}/{y}.png"};       // website build: provider id -> tile URL template (the local app uses its own /tiles/ proxy)
-var LANGS_X={"zh-hans":{"name":"简体中文","dir":"ltr","tag":"zh-Hans","nl":"zh-Hans-u-nu-latn","pl":["other"],"v":"d81520e89e"}};         // website build: the languages beyond the built-in ones, code -> {name,dir,tag,nl,pl,v}; their texts are fetched from lang/<code>.json when a visitor needs them
+var LANGS_X={"zh-hans":{"name":"简体中文","dir":"ltr","tag":"zh-Hans","nl":"zh-Hans-u-nu-latn","pl":["other"],"v":"d81520e89e"},"de":{"name":"Deutsch","dir":"ltr","tag":"de","nl":"de-u-nu-latn","pl":["one","other"],"v":"d52764f78e"}};         // website build: the languages beyond the built-in ones, code -> {name,dir,tag,nl,pl,v}; their texts are fetched from lang/<code>.json when a visitor needs them
 function hasL(k){ return Object.prototype.hasOwnProperty.call(LANGS,k); }   // 'constructor' / '__proto__' in the stored language must not count as a language
 function hasX(k){ return Object.prototype.hasOwnProperty.call(LANGS_X,k); }
 function hasAny(k){ return hasL(k)||hasX(k); }
@@ -3015,7 +3016,7 @@ window.__g25={get refView(){return refView;},get refDown(){return refDown;},get 
 <noscript><div style="max-width:720px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,sans-serif;color:#222;background:#fff">
 <h1>G25 GeoMap</h1>
 <p>G25 GeoMap is a free tool that colors a world map by Global25 (G25) genetic distance from the samples you choose. It needs JavaScript; everything runs in your browser.</p>
-<p><a href="about.html" lang="en" hreflang="en">About &amp; how it works</a> &middot; <a href="about-fa.html" lang="fa" hreflang="fa">فارسی</a> &middot; <a href="about-zh-hans.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></p>
+<p><a href="about.html" lang="en" hreflang="en">About &amp; how it works</a> &middot; <a href="about-fa.html" lang="fa" hreflang="fa">فارسی</a> &middot; <a href="about-zh-hans.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> &middot; <a href="about-de.html" lang="de" hreflang="de">Deutsch</a></p>
 </div></noscript>
 </body>
 </html>
